@@ -1,0 +1,52 @@
+---
+// src/components/ProjectCarousel.astro
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
+
+import { Swiper, SwiperSlide } from 'swiper/astro';
+import SwiperCore, { Pagination, Autoplay } from 'swiper';
+
+SwiperCore.use([Pagination, Autoplay]);
+
+const projects = [
+  {
+    title: "Checkmate Connoisseurs",
+    desc: "Dynamic chess club site with player profiles, analysis, and schedules.",
+    img: "/pfp.jpg",
+  },
+  {
+    title: "Personal Blog",
+    desc: "Astro-powered blog with custom markdown styles and dark mode.",
+    img: "/pfp.jpg",
+  },
+  {
+    title: "eStore Prototype",
+    desc: "Responsive e-commerce template with cart and product filtering.",
+    img: "/pfp.jpg",
+  },
+];
+---
+
+<Swiper
+  pagination={{ clickable: true }}
+  autoplay={{ delay: 3000 }}
+  spaceBetween={20}
+  slidesPerView={1}
+  breakpoints={{
+    640: { slidesPerView: 1 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 }
+  }}
+  class="rounded-xl"
+>
+  {projects.map(project => (
+    <SwiperSlide>
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 shadow-md hover:scale-105 transition-transform duration-300">
+        <img src={project.img} alt={project.title} class="rounded-md w-full h-40 object-cover mb-4" />
+        <h3 class="text-lg font-bold">{project.title}</h3>
+        <p class="text-sm">{project.desc}</p>
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>

@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Home">
+  <section class="space-y-8">
+    <div class="space-y-4">
+      <p class="text-xl">Hey there 👋</p>
+      <h1 class="text-5xl font-extrabold text-white">
+        I'm Magus Otieno
+      </h1>
+      <h2 class="text-2xl font-semibold text-purple-400">
+        Student • Software Developer • Chess Captain • eSports Enthusiast
+      </h2>
+      <p class="text-lg text-gray-300 max-w-2xl">
+        I'm a Mathematics & IT student at Maasai Mara University, passionate about full-stack development, cybersecurity, and competitive chess. I lead our university’s chess club and aim to build Kenya’s most feared eSports team. 🕹️💻
+      </p>
+    </div>
+
+    <div class="flex gap-4">
+      <a href="/cv" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded text-white font-semibold">
+        View My CV
+      </a>
+      <a href="/projects" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-white font-semibold">
+        See My Projects
+      </a>
+    </div>
+  </section>
+
+  <section class="mt-16">
+    <h2 class="text-3xl font-bold mb-6">Featured Projects</h2>
+    <ul class="space-y-6">
+      <li class="bg-gray-800 p-4 rounded">
+        <h3 class="text-xl font-semibold">Checkmate Connoisseurs</h3>
+        <p class="text-gray-400">
+          Dynamic chess club site with player profiles, game analysis tools, and tournament scheduling.
+        </p>
+      </li>
+      <li class="bg-gray-800 p-4 rounded">
+        <h3 class="text-xl font-semibold">eSports Management Dashboard (WIP)</h3>
+        <p class="text-gray-400">
+          A command center for organizing teams, scrims, and tournaments, tailored for African FPS gamers.
+        </p>
+      </li>
+    </ul>
+  </section>
+</Layout>
