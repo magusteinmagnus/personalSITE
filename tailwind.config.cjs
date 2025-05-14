@@ -1,16 +1,19 @@
-module.exports = {
-  content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}'],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  content: ['./src/**/*.{astro,js,ts,jsx,tsx}'],
+  content: [
+    './src/**/*.{astro,html,js,jsx,ts,tsx}',
+  ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
+      colors: {
+        primary: '#7c3aed',
+        secondary: '#e0f2fe',
+      },
+    },
   },
   plugins: [],
 };

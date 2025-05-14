@@ -1,0 +1,64 @@
+
+import Layout from '../layouts/Layout.astro';
+
+<Layout title="Contact">
+  <section class="space-y-6 max-w-2xl mx-auto">
+    <h1 class="text-4xl font-bold">Get in Touch</h1>
+    <p class="text-gray-300 text-lg">
+      Whether it’s about chess tournaments, cybersecurity collaboration(especially CTFs,reverse engineering
+      pent-testing and all the glitz and glamour of cybersecurity), or building the next great eSports empire, I’m all ears. Let’s connect , merge and build for the betterment of the future generations!
+    </p>
+
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="space-y-4 mt-6"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <p class="hidden">
+        <label>
+          Don’t fill this out if you’re human: <input name="bot-field" />
+        </label>
+      </p>
+
+      <div>
+        <label class="block text-sm font-medium">IAN OTIENO "theMagus"</label>
+        <input
+          type="text"
+          name="name"
+          required
+          class="w-full p-2 rounded bg-gray-800 text-white border border-gray-600"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium">manduli369@gmail.com</label>
+        <input
+          type="email"
+          name="email"
+          required
+          class="w-full p-2 rounded bg-gray-800 text-white border border-gray-600"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium">Message</label>
+        <textarea
+          name="message"
+          rows="5"
+          required
+          class="w-full p-2 rounded bg-gray-800 text-white border border-gray-600"
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-5 py-2 rounded"
+      >
+        Send Message
+      </button>
+    </form>
+  </section>
+</Layout>

@@ -1,0 +1,24 @@
+---
+// src/pages/blog.astro
+import Layout from '../layouts/Layout.astro';
+
+const posts = [
+  { title: "How I Built My Site with Astro", date: "2025-05-10", tags: ["Astro", "Dev"], excerpt: "A walk through building my blazing-fast personal site using Astro." },
+  { title: "The Rise of eSports in Kenya", date: "2025-04-22", tags: ["Gaming", "eSports"], excerpt: "An analysis of Kenya’s booming eSports scene and its future." }
+];
+---
+
+<Layout title="Blog">
+  <section class="space-y-6">
+    <h1 class="text-4xl font-bold">Blog</h1>
+    <div class="grid md:grid-cols-2 gap-6">
+      {posts.map(post => (
+        <article class="p-6 border rounded-lg bg-white dark:bg-gray-800 shadow hover:scale-105 transition-transform">
+          <h2 class="text-2xl font-semibold mb-2">{post.title}</h2>
+          <p class="text-sm text-gray-500 mb-1">{post.date} · {post.tags.join(', ')}</p>
+          <p class="text-gray-700 dark:text-gray-300">{post.excerpt}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>

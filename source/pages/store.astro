@@ -1,0 +1,25 @@
+---
+// src/pages/store.astro
+import Layout from '../layouts/Layout.astro';
+
+const products = [
+  { name: "CV Template", price: "Free", desc: "My clean, professional resume template in PDF.", link: "/cv.pdf" },
+  { name: "eBook: Mastering Astro", price: "$5", desc: "My beginner-friendly guide to building with Astro.", link: "#" }
+];
+---
+
+<Layout title="Store">
+  <section class="space-y-6">
+    <h1 class="text-4xl font-bold">Store</h1>
+    <div class="grid md:grid-cols-2 gap-6">
+      {products.map(p => (
+        <div class="p-6 border rounded-lg bg-white dark:bg-gray-800 shadow hover:shadow-lg transition">
+          <h2 class="text-2xl font-semibold mb-1">{p.name}</h2>
+          <p class="text-gray-600 dark:text-gray-300 mb-2">{p.desc}</p>
+          <p class="font-bold mb-4">{p.price}</p>
+          <a href={p.link} class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">Get it</a>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>
